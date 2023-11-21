@@ -1,0 +1,124 @@
+<!Doctype html>
+<html lang = "en"></html>
+<head>
+    <title>Thời Trang</title>
+</head>
+<style>
+    .word{
+        margin-left: 50px;
+    }
+    .img{
+        margin-top:50px;
+    }
+    .btn{
+        margin-left: 600px;
+    }
+</style>
+<body>
+    <div class="head">
+        <div class="taskbar">
+            <a class="word">TRANG CHỦ</a>
+            <a class="word">T-SHIRTS</a>
+            <a class="word">SWEATSHIRT/JACKETS</a>
+            <a class="word">ACCESSORIES</a>
+            <a class="word">BOTTOMS</a>
+            <a class="word">BRANDS</a>
+            <a class="word">CATHENTIC</a>
+            <a class="word">GIỎ HÀNG</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="img" id="img">
+            <img style="height:200px; width:1350px;" src="https://thegioidotap.vn/wp-content/uploads/2020/12/279.jpg" style="width: 100%;" />
+        </div>
+        <div class="btn">
+            <input type="button" id="btnprev" value="Prev" onclick="prevClick();" />
+            <input type="button" id="btn1" value="1" style="background-color: red;" onclick="btn1click(1);" />
+            <input type="button" id="btn2" value="2" onclick="btn1click(2);" />
+            <input type="button" id="btn3" value="3" onclick="btn1click(3);" />
+            <input type="button" id="btn4" value="4" onclick="btn1click(4);" />
+            <input type="button" id="btnnext" value="Next" onclick="nextClick();" />
+        </div> 
+    </div>
+</body>
+<script>
+    function nextClick() {
+        var content = document.getElementById("img").innerHTML;
+        if (content.includes("https://thegioidotap.vn/wp-content/uploads/2020/12/279.jpg")) {
+            btn1click(2);
+        }
+        else if (content.includes("https://4men.com.vn/images/thumbs/2020/11/black-friday-2020-sale-nhiet-tinh-quay-ht-minh-news-594.png")) {
+            btn1click(3);
+        }
+        else if (content.includes("https://aeonmall-long-bien.com.vn/wp-content/uploads/2023/11/resize-tttm_1000x625-kids-scaled.jpg")) {
+            btn1click(4);
+        }
+        else if (content.includes("https://bizweb.dktcdn.net/100/438/408/files/black-friday-yodyvn31.jpg?v=1699851508296")) {
+            btn1click(1);
+        }
+    }
+    function prevClick() {
+        var content = document.getElementById("img").innerHTML;
+        if (content.includes("https://thegioidotap.vn/wp-content/uploads/2020/12/279.jpg")) {
+            btn1click(4);
+            // bginput(4);
+        }
+        else if (content.includes("https://4men.com.vn/images/thumbs/2020/11/black-friday-2020-sale-nhiet-tinh-quay-ht-minh-news-594.png")) {
+            btn1click(1);
+            // bginput(1);
+        }
+        else if (content.includes("https://aeonmall-long-bien.com.vn/wp-content/uploads/2023/11/resize-tttm_1000x625-kids-scaled.jpg")) {
+            btn1click(2);
+            // bginput(2);
+        }
+        else if (content.includes("https://bizweb.dktcdn.net/100/438/408/files/black-friday-yodyvn31.jpg?v=1699851508296")) {
+            btn1click(3);
+        }
+    }
+
+    function bginput(id) {
+        if (id == 1) {
+            document.getElementById("btn1").style.background = "red";
+            document.getElementById("btn2").style.background = "blue";
+            document.getElementById("btn3").style.background = "blue";
+            document.getElementById("btn4").style.background = "blue";
+        }
+        else if (id == 2) {
+            document.getElementById("btn1").style.background = "blue";
+            document.getElementById("btn2").style.background = "red";
+            document.getElementById("btn3").style.background = "blue";
+            document.getElementById("btn4").style.background = "blue";
+        }
+        else if (id == 3) {
+            document.getElementById("btn1").style.background = "blue";
+            document.getElementById("btn2").style.background = "blue";
+            document.getElementById("btn3").style.background = "red";
+            document.getElementById("btn4").style.background = "blue";
+        }
+        else if (id == 4) {
+            document.getElementById("btn1").style.background = "blue";
+            document.getElementById("btn2").style.background = "blue";
+            document.getElementById("btn3").style.background = "blue";
+            document.getElementById("btn4").style.background = "red";
+        }
+    }
+
+    function btn1click(id) {
+        if (id == 1) {
+            document.getElementById("img").innerHTML = "<img src='https://thegioidotap.vn/wp-content/uploads/2020/12/279.jpg' style='width:1350px; height:200px;'/>"
+            bginput(1);
+        }
+        else if (id == 2) {
+            document.getElementById("img").innerHTML = "<img src='https://4men.com.vn/images/thumbs/2020/11/black-friday-2020-sale-nhiet-tinh-quay-ht-minh-news-594.png' style='height:200px; width:1350px;'/>"
+            bginput(2);
+        }
+        else if (id == 3) {
+            document.getElementById("img").innerHTML = "<img src='https://aeonmall-long-bien.com.vn/wp-content/uploads/2023/11/resize-tttm_1000x625-kids-scaled.jpg' style='height:200px; width:1350px;'/>"
+            bginput(3);
+        }
+        else if (id == 4) {
+            document.getElementById("img").innerHTML = "<img src='https://bizweb.dktcdn.net/100/438/408/files/black-friday-yodyvn31.jpg?v=1699851508296' style='height:200px; width:1350px;'/>"
+            bginput(4);
+        }
+    }
+</script>
