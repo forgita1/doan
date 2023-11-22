@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>exam</title>
+    </head>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        align-items: center;
+        background: white;
+        display: flex;
+        justify-content: center;
+    
+    }
+    .card{
+        background: rgb(28, 149, 224);
+        width: 350px;
+        height: 500px;
+    }
+    
+    .text1{
+        text-align: center;
+        font-size: 25px;
+        color: white;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-left: 20px;
+    }
+    
+    .content{
+        background: white;
+        padding: 15px 10px 5px 10px;
+        margin: 30px 30px 50px 30px;
+        height: 80%;
+    }
+    
+    .gender{
+        margin-left:20px;
+        margin-top:15px
+    }
+    
+    .address{
+        margin-left:10px;
+        width:230px;
+        height:80px;
+    }
+
+    </style>
+    <body>
+        <div class="card">
+            <div class="heading">
+                <a class="text1"><em>MULTI STEPS FORM WIDGET</em></a>
+            </div>
+            <div class="content">
+                <div class="body">
+                    <button style="width:80px; height: 30px; border: 0; margin-left:20px; margin-top: 30px; background-color: rgb(28,149,244); font-family: Arial, Helvetica, sans-serif; color:white; cursor: pointer;" onClick="submitProfile()" class="profile" type="button" >Profile</button>
+                </div>
+                <div class="input">
+                    <input id="fn" style="margin-left:20px; margin-top:30px; " type="textbox" placeholder="First Name"/>
+                    <br>
+                    <input id="ln" style="margin-left:20px; margin-top:15px;" type="textbox" placeholder="Last Name"/>  
+                    <br>
+                    <input id="phone" style="margin-left:20px; margin-top:15px;" type="textbox" placeholder="Phone"/>
+                </div>
+                <div class="gender">
+                    <p>Gender:</p> 
+                    <input type="radio" name="gioitinh" checked id="n1"> Nam 
+                    <input type="radio" name="gioitinh" id="n2"> Nữ
+                </div>
+                <div class="address">
+                    <input id="address" class="address" type="textbox" placeholder="Address"/>
+                </div>
+                <div class="next">
+                    <button style="cursor:pointer; width:80px; height: 30px; border: 0; margin-left:20px; margin-top: 30px; background-color: rgb(28,149,244); font-family: Arial, Helvetica, sans-serif; color:white" class="profile" type="button" onclick="submitForm()">Next</button>
+                </div>
+            </div>
+    </body>
+</html>
+<script>
+    function submitForm(){
+           var fn = document.getElementById("fn").value;
+           var ln = document.getElementById("ln").value;
+           var phone = document.getElementById("phone").value;
+           var address = document.getElementById("address").value;
+           if(fn.length ==0) 
+              alert("You haven't input first name!")
+              else if(ln.length ==0)
+              alert("You haven't input last name!")
+              else if(phone.length == 0)
+              alert("Invalid phone");
+             else if(address.length == 0)
+            alert("Invalid address");
+            else 
+            alert("ĐĂNG KÍ THÀNH CÔNG!!");  
+    }
+
+</script>
